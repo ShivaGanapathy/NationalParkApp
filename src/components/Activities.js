@@ -26,7 +26,9 @@ function Activities(props) {
 
   return (
     <div>
-      <h1>Showing Results for All Activities: </h1>
+      <center>
+        <h1>Showing Results for All Activities (In Alphabetical Order): </h1>
+      </center>
       {loading ? (
         <div>..loading</div>
       ) : (

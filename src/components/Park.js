@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ParkImages from './ParkImages';
+import { Carousel } from 'react-bootstrap';
 export default function Park() {
   const [images, setImages] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -35,11 +36,12 @@ export default function Park() {
         <div>..loading</div>
       ) : (
         <div>
-          <h1>Welcome to {parkName}!!!</h1>
+          <center>
+            <h1>Welcome to {parkName}!!!</h1>
+          </center>
+
           <article>
-            <h2>Park Description</h2>
             <p>{parkDescription}</p>
-            <h2>Park Images</h2>
             <ParkImages images={images}></ParkImages>
           </article>
         </div>

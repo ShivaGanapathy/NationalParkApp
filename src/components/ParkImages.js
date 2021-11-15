@@ -1,15 +1,25 @@
 import React from 'react';
+import './ParkImages.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Carousel } from 'react-bootstrap';
 export default function ParkImages(props) {
-  console.log(props.images[0].url);
   return props.images.map((image) => {
     return (
-      <div>
-        <center>
-          <img src={image.url} alt={image.title} height="500"></img>
-          <p>{image.title}</p>
-        </center>
-      </div>
+      <Carousel>
+        <Carousel.Item href={image.url}>
+          <img
+            className="d-block w-100"
+            src={image.url}
+            alt={image.id}
+            height={700}
+          />
+          <Carousel.Caption>
+            <h3>{image.title}</h3>
+            <p>{image.caption}</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
     );
   });
 }

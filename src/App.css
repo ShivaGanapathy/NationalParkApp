@@ -42,3 +42,8 @@
     transform: rotate(360deg);
   }
 }
+
+.carousel {
+  width: 640px;
+  height: 360px;
+}
