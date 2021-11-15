@@ -1,9 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
+import ParkImages from './ParkImages';
 export default function Park() {
-  const [park, setPark] = useState(null);
+  const [images, setImages] = useState(null);
   const [loading, setLoading] = useState(true);
   const [parkName, setParkName] = useState(null);
   const [parkDescription, setParkDescription] = useState(null);
@@ -18,11 +18,12 @@ export default function Park() {
   useEffect(async () => {
     const response = await fetch(request);
     const info = await response.json();
-    const parkName = info.data[0].fullName;
-    const parkDescription = info.data[0].description;
 
-    setParkName(parkName);
-    setParkDescription(parkDescription);
+    console.log(info);
+
+    setImages(info.data[0].images);
+    setParkName(info.data[0].fullName);
+    setParkDescription(info.data[0].description);
 
     setLoading(false);
   }, []);
@@ -36,7 +37,10 @@ export default function Park() {
         <div>
           <h1>Welcome to {parkName}!!!</h1>
           <article>
+            <h2>Park Description</h2>
             <p>{parkDescription}</p>
+            <h2>Park Images</h2>
+            <ParkImages images={images}></ParkImages>
           </article>
         </div>
       )}
