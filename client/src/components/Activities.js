@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useHistory } from 'react-router-dom';
 
 function Activities(props) {
-  const [data, setData] = useState([{}]);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
   let history = useHistory();
 
   const ButtonPressed = (props) => {
@@ -14,34 +15,30 @@ function Activities(props) {
     });
   };
 
-  useEffect(() => {
-    fetch('/activities')
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-      });
+  const request =
+    'https://developer.nps.gov/api/v1/activities?limit=50&start=0&api_key=pwVAaI7eyJ3qGEpakWoicbKA0kCPdzM6KVyeH2mB';
+  useEffect(async () => {
+    const response = await fetch(request);
+    const info = await response.json();
+    setData(info.data);
+    setLoading(false);
   }, []);
+
   return (
-    <div id="a1">
-      <h1>Activity Search Menu</h1>
-      <p>
-        Here, you can browse for activties, and which national parks are
-        associated with them!
-      </p>
-      {typeof data.members === 'undefined' ? (
-        <p>Loading...</p>
+    <div>
+      <h1>Showing Results for All Activities: </h1>
+      {loading ? (
+        <div>..loading</div>
       ) : (
-        data.members.map((member, i) => (
+        data.map((data) => (
           <div>
             <br></br>{' '}
-            <Button key={i} onClick={() => ButtonPressed(member)}>
-              {member}
+            <Button onClick={() => ButtonPressed(data.name)}>
+              {data.name}
             </Button>
           </div>
         ))
       )}
-
-      <br></br>
     </div>
   );
 }
