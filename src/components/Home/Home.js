@@ -29,41 +29,31 @@ function Home() {
         </div>
         <ul class="social">
           <li>
-            <a href="#">
+            <a
+              href="https://www.facebook.com/nationalparkservice/"
+              target="_blank"
+            >
               <img src="https://i.ibb.co/x7P24fL/facebook.png"></img>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a
+              href="https://twitter.com/NatlParkService?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+              target="_blank"
+            >
               <img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></img>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a
+              href="https://www.instagram.com/nationalparkservice/"
+              target="_blank"
+            >
               <img src="https://i.ibb.co/ySwtH4B/instagram.png"></img>
             </a>
           </li>
         </ul>
       </section>
-      <div class="menu">
-        <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">News</a>
-          </li>
-          <li>
-            <a href="#">Destination</a>
-          </li>
-          <li>
-            <a href="#">Blog</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
     </div>
   );
 }

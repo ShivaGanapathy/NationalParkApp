@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useHistory } from 'react-router-dom';
+import { Dropdown } from 'react-bootstrap';
+import image from './nps.jpeg';
+import './Activities.css';
 
 function Activities(props) {
   const [data, setData] = useState(null);
@@ -26,20 +29,44 @@ function Activities(props) {
 
   return (
     <div>
-      <center>
-        <h1>Showing Results for All Activities (In Alphabetical Order): </h1>
-      </center>
+      <img id="nps" src={image}></img>
+      <img id="nps" src={image}></img>
+      <img id="nps" src={image}></img>
+      <div>
+        <h1 id="title">Activity Menu</h1>
+        <p id="description">
+          You probably already know that the National Park Service offers a
+          range of traditional outdoor recreational activities for visitor
+          enjoyment including bicycling, camping, climbing, equestrianism,
+          fishing, hiking, hunting, swimming, snowshoeing, and more. And you
+          maybe knew that you can find outdoor adventures in cultural and
+          natural resource programs and events such as interpretive ranger
+          talks, live music, theater, and craft demonstrations. But did you know
+          that several national parks also maintain exercise and sports
+          facilities and offer opportunities for golf, tennis, and running?
+          Select from the dropdown of activities below to browse which national
+          parks have each!
+        </p>
+      </div>
+
       {loading ? (
         <div>..loading</div>
       ) : (
-        data.map((data) => (
-          <div>
-            <br></br>{' '}
-            <Button onClick={() => ButtonPressed(data.name)}>
-              {data.name}
-            </Button>
-          </div>
-        ))
+        <Dropdown id="drop">
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+            Select Activities
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {data.map((data) => (
+              <div>
+                <br></br>{' '}
+                <Dropdown.Item onClick={() => ButtonPressed(data.name)}>
+                  {data.name}
+                </Dropdown.Item>
+              </div>
+            ))}{' '}
+          </Dropdown.Menu>
+        </Dropdown>
       )}
     </div>
   );

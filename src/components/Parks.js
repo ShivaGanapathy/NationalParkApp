@@ -1,9 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Dropdown } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import Park from './Park';
+import image from './nps.jpeg';
+import './Parks.css';
 
 function Parks() {
   let history = useHistory();
@@ -34,19 +36,25 @@ function Parks() {
   };
 
   return (
-    <div>
-      <h1>Showing Results for National Parks that Offer: {activityName}</h1>
+    <div className="containerL">
       {loading ? (
         <div>..loading</div>
       ) : (
-        park.map((park) => (
-          <div>
-            <br></br>{' '}
-            <Button onClick={() => ButtonPressed(park.parkCode)}>
-              {park.fullName}
-            </Button>
-          </div>
-        ))
+        <Dropdown>
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+            Select Parks From Parks That Offer: {activityName}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {park.map((park) => (
+              <div>
+                <br></br>{' '}
+                <Dropdown.Item onClick={() => ButtonPressed(park.parkCode)}>
+                  {park.fullName}
+                </Dropdown.Item>
+              </div>
+            ))}{' '}
+          </Dropdown.Menu>
+        </Dropdown>
       )}
     </div>
   );

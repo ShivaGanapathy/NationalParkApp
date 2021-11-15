@@ -1,0 +1,26 @@
+/* Centered text */
+#title {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#description {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-size-adjust: 80%;
+}
+
+#nps {
+  opacity: 0.25;
+  background-repeat: true;
+}
+
+#drop {
+  position: absolute;
+  top: 9%;
+  left: 80%;
+}

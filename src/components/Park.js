@@ -2,7 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ParkImages from './ParkImages';
-import { Carousel } from 'react-bootstrap';
+import image from './nps.jpeg';
+
 export default function Park() {
   const [images, setImages] = useState(null);
   const [loading, setLoading] = useState(true);

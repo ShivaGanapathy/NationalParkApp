@@ -40,10 +40,10 @@ export default class Navigationbar extends Component {
               <Activities />
             </Route>
             <Route path="/parks/:activityName">
-              <Parks state={this.state}></Parks>;
+              <Parks state={this.state}></Parks>
             </Route>
             <Route path="/locations/:parkCode">
-              <Park state={this.state}></Park>;
+              <Park state={this.state}></Park>
             </Route>
             <Route path="/">
               <Home></Home>
