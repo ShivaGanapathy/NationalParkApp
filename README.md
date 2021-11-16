@@ -19,3 +19,4 @@ Alternatively, you can clone this code repository to run the project locally. Si
 
 ## Afterwards, you can check out each locations's webpage where you can learn more about the park and view scenic images of the park.
 
+<a href=""><img src="ParkImages.gif" title=""/></a>
