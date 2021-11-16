@@ -1,5 +1,4 @@
 import React from 'react';
-import './ParkImages.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel } from 'react-bootstrap';

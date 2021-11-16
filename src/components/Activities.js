@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useHistory } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
@@ -29,9 +28,9 @@ function Activities(props) {
 
   return (
     <div>
-      <img id="nps" src={image}></img>
-      <img id="nps" src={image}></img>
-      <img id="nps" src={image}></img>
+      <img id="nps" src={image} alt="background img"></img>
+      <img id="nps" src={image} alt="background img"></img>
+      <img id="nps" src={image} alt="background img"></img>
       <div>
         <h1 id="title">Activity Menu</h1>
         <p id="description">
@@ -44,8 +43,8 @@ function Activities(props) {
           talks, live music, theater, and craft demonstrations. But did you know
           that several national parks also maintain exercise and sports
           facilities and offer opportunities for golf, tennis, and running?
-          Select from the dropdown of activities below to browse which national
-          parks have each!
+          Select from the dropdown of activities to the right to browse which
+          national parks have each!
         </p>
       </div>
 
